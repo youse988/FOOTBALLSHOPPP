@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1540750097408936');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1540750097408936&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <title>Boutique MCA - Nouveau T-Shirt Officiel 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Local Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-wrapper">
+                <img src="IMG/LOGO.webp" alt="MCA Logo" class="logo-icon-img" loading="eager">
+                <div class="logo-text">Football <span>Shop</span></div>
+            </div>
+            <div class="club-slogan" data-i18n="clubSlogan">EL DOYEN / BAB EL OUED</div>
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn active" data-lang="fr" aria-label="Français">FR</button>
+                <button type="button" class="lang-btn" data-lang="ar" aria-label="العربية">عربي</button>
+            </div>
+        </div>
+    
+</header>
+    
+<div class="limit-bar" data-i18n="limitBar">Quantité limitée - Réduction disponible !</div>
+    <!-- HERO SECTION: SMOOTH CAROUSEL & MESH BG -->
+    <section class="hero-section" id="hero">
+        <!-- Animated lights and grid mesh backdrops -->
+        <div class="hero-mesh-bg"></div>
+        <div class="hero-light-orb-1"></div>
+        <div class="hero-light-orb-2"></div>
+
+        <div class="carousel-container" id="carousel">
+            <div class="carousel-slide">
+                <img class="carousel-photo" src="IMG/MCA1.jpeg" alt="MCA 1" data-i18n-alt="slideAlt3" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+                <img class="carousel-photo" src="IMG/MCA2.jpeg" alt="MCA 2" data-i18n-alt="slideAlt4" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+                <img class="carousel-photo" src="IMG/MCA3.jpeg" alt="MCA 3" data-i18n-alt="slideAlt5" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <button class="carousel-btn prev" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="carousel-btn next" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+
+        <!-- Slider Indicators -->
+        <div class="carousel-indicators" id="indicators">
+            <div class="indicator active" data-index="0"></div>
+            <div class="indicator" data-index="1"></div>
+            <div class="indicator" data-index="2"></div>
+        </div>
+
+        <!-- Scroll down indicator -->
+        <a href="#product" class="scroll-indicator" data-i18n-aria="scrollDiscover">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </a>
+    </section>
+
+    <!-- PRODUCT SHOWCASE SECTION -->
+    <section class="product-section" id="product">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle" data-i18n="sectionSubtitle">Exclusivité MCA Store</span>
+                <h2 class="section-title" data-i18n="sectionTitle">Le T-Shirt Officiel</h2>
+            </div>
+
+            <div class="product-grid">
+                <!-- Left: 3D Flip Card T-shirt Viewer -->
+                <div class="product-viewer">
+                    <div class="flip-card-container" id="shirtFlipCard">
+                        <div class="flip-card-inner">
+                            <!-- Front Side -->
+                            <div class="flip-card-front">
+                                <span class="flip-badge"><i class="fa-solid fa-arrows-rotate"></i> <span data-i18n="flipFront">Face Avant</span></span>
+                                <img class="product-front-img" src="IMG/MCA AVANT.jpeg" alt="MCA Avant" data-i18n-alt="frontAlt1" loading="lazy">
+                            </div>
+                            <!-- Back Side -->
+                            <div class="flip-card-back">
+                                <span class="flip-badge"><i class="fa-solid fa-arrows-rotate"></i> <span data-i18n="flipBack">Face Arrière</span></span>
+                                <img class="product-back-img" src="IMG/MCA DOS.jpeg" alt="MCA Dos" data-i18n-alt="backAlt1" loading="lazy">
+                                <img class="product-dtf-img" src="IMG/MCA DOS DTF.jpeg" alt="MCA Dos DTF" data-i18n-alt="dtfAlt1" style="display:none;" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- View Control Toggle -->
+                    <div class="viewer-controls">
+    <button class="view-toggle-btn active" id="toggleFrontBtn" data-i18n="viewFront">Devant</button>
+    <button class="view-toggle-btn" id="toggleBackBtn" data-i18n="viewBack">Derrière</button>
+    <button class="view-toggle-btn" id="toggleDtfBtn" data-i18n="viewDtf">DTF</button>
+</div>
+                </div>
+
+                <!-- Right: Product details -->
+                <div class="product-details">
+                    <span class="brand-tag" data-i18n="brandTag">Collection Limitée</span>
+                    <h3 class="product-name" data-i18n="productName">T-Shirt MCA d'Alger 2026</h3>
+                    
+                    <div class="product-price-box">
+                        <span class="price-tag" data-i18n="priceTag">3 000 DA</span>
+                        <span class="price-old" data-i18n="priceOld">4 500 DA</span>
+                        <span class="promo-badge" data-i18n="promoBadge">Pack promo</span>
+                    </div>
+                    <ul class="bundle-pricing-hint">
+                        <li data-i18n-html="bundle1">1 T-shirt : <strong>3 000 DA</strong></li>
+                        <li data-i18n-html="bundle2">2 T-shirts et plus : <strong>−100 DA</strong> par T-shirt</li>
+                        <li data-i18n-html="bundle3">Ex. 2 T-shirts : <strong>5 800 DA</strong> · 3 T-shirts : <strong>8 700 DA</strong></li>
+                    </ul>
+
+                    <p class="product-desc" data-i18n="productDesc">
+                        Célébrez l'histoire centenaire du Mouloudia Club d'Alger avec ce t-shirt premium. Fabriqué en polyester micro-aéré léger avec le logo officiel du Doyen brodé avec minutie et des finitions or brillant pour un style inimitable sur le terrain et en ville.
+                    </p>
+
+                    <ul class="product-specifications">
+                        <li>
+                            <div class="spec-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div class="spec-text" data-i18n-html="spec1">Logo MCA officiel brodé en <strong>haute définition</strong></div>
+                        </li>
+                        <li>
+                            <div class="spec-icon"><i class="fa-solid fa-wind"></i></div>
+                            <div class="spec-text" data-i18n-html="spec2">Tissu technique <strong>anti-transpirant respirant</strong></div>
+                        </li>
+                        <li>
+                            <div class="spec-icon"><i class="fa-solid fa-vest-patches"></i></div>
+                            <div class="spec-text" data-i18n-html="spec3">Coupe athlétique ajustée avec <strong>coutures plates anti-irritations</strong></div>
+                        </li>
+                    </ul>
+
+<a href="#checkout" class="cta-button">
+<span data-i18n="ctaOrder">Commander maintenant</span>
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM CHECKOUT SECTION -->
+    <section class="checkout-section" id="checkout">
+        <div class="container">
+            <div class="checkout-grid">
+                <div class="checkout-card">
+                    <div class="checkout-card-header">
+                        <h3 class="checkout-card-title" data-i18n="checkoutTitle">Formulaire de Commande</h3>
+                        <p class="checkout-card-desc" data-i18n="checkoutDesc">Remplissez les détails ci-dessous pour réserver votre t-shirt. Paiement cash à la livraison !</p>
+                    </div>
+
+                    <form id="mainCheckoutForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="9ac1185d-6c3f-4c7e-81eb-ff5108d95b21">
+                        <input type="hidden" name="subject" value="Nouvelle Commande MCA Store">
+                        <div class="form-row">
+                            <div class="form-group" id="group-fullname">
+                                <label for="fullname" data-i18n="labelFullname">Nom & Prénom</label>
+                                <input type="text" id="fullname" data-i18n-placeholder="placeholderFullname" placeholder="Ex: Mohamed Benali" required>
+                                <div class="invalid-feedback" data-i18n="errorFullname">Veuillez saisir votre nom complet.</div>
+                            </div>
+                            <div class="form-group" id="group-phone">
+                                <label for="phone" data-i18n="labelPhone">Numéro de Téléphone</label>
+                                <input type="tel" id="phone" data-i18n-placeholder="placeholderPhone" placeholder="Ex: 0555 12 34 56" required>
+                                <div class="invalid-feedback" data-i18n="errorPhone">Veuillez saisir un numéro de téléphone valide (05/06/07).</div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group" id="group-wilaya">
+                                <label for="wilayaSelect" data-i18n="labelWilaya">Wilaya</label>
+                                <select id="wilayaSelect" required>
+                                    <option value="" disabled selected data-i18n="chooseWilaya">Choisir une wilaya</option>
+                                    <!-- Dynamic wilayas will be loaded here -->
+                                </select>
+                                <div class="invalid-feedback" data-i18n="errorWilaya">Veuillez sélectionner votre wilaya.</div>
+                            </div>
+                            <div class="form-group" id="group-commune">
+                                <label for="communeSelect" data-i18n="labelCommune">Commune</label>
+                                <select id="communeSelect" required disabled>
+                                    <option value="" disabled selected data-i18n="chooseCommune">Sélectionner la commune</option>
+                                    <!-- Dynamic communes will be loaded here -->
+                                </select>
+                                <div class="invalid-feedback" data-i18n="errorCommune">Veuillez sélectionner votre commune.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="group-delivery">
+                            <label data-i18n="labelDelivery">Mode de livraison</label>
+                            <div class="delivery-options">
+                                <label class="delivery-option">
+                                    <input type="radio" name="delivery_method" value="home" checked>
+                                    <span class="delivery-option-box">
+                                        <i class="fa-solid fa-house"></i>
+                                        <span class="delivery-option-title" data-i18n="deliveryHome">À domicile / Bureau</span>
+                                        <span class="delivery-option-price" id="deliveryHomePrice">— DA</span>
+                                    </span>
+                                </label>
+                                <label class="delivery-option" id="stopDeskOptionLabel">
+                                    <input type="radio" name="delivery_method" value="stopdesk">
+                                    <span class="delivery-option-box">
+                                        <i class="fa-solid fa-store"></i>
+                                        <span class="delivery-option-title" data-i18n="deliveryStopDesk">Stop Desk (Point relais)</span>
+                                        <span class="delivery-option-price" id="deliveryStopDeskPrice">— DA</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="invalid-feedback" data-i18n="errorDelivery">Veuillez choisir un mode de livraison.</div>
+                        </div>
+
+                        <div class="form-group" id="group-sizes">
+                            <label data-i18n="labelSizes">Quantité par taille</label>
+                            <div class="size-qty-grid">
+                                
+        <div class="size-qty-item">
+            <label for="qtyS" data-i18n="sizeS">Taille S</label>
+            <div class="qty-controls">
+                <button type="button" class="qty-decrease" data-target="qtyS">‑</button>
+                <input type="number" id="qtyS" min="0" max="99" value="0" inputmode="numeric">
+                <button type="button" class="qty-increase" data-target="qtyS">+</button>
+            </div>
+        </div>
+        <div class="size-qty-item">
+            <label for="qtyM" data-i18n="sizeM">Taille M</label>
+            <div class="qty-controls">
+                <button type="button" class="qty-decrease" data-target="qtyM">‑</button>
+                <input type="number" id="qtyM" min="0" max="99" value="0" inputmode="numeric">
+                <button type="button" class="qty-increase" data-target="qtyM">+</button>
+            </div>
+        </div>
+        <div class="size-qty-item">
+            <label for="qtyL" data-i18n="sizeL">Taille L</label>
+            <div class="qty-controls">
+                <button type="button" class="qty-decrease" data-target="qtyL">‑</button>
+                <input type="number" id="qtyL" min="0" max="99" value="0" inputmode="numeric">
+                <button type="button" class="qty-increase" data-target="qtyL">+</button>
+            </div>
+        </div>
+        <div class="size-qty-item">
+            <label for="qtyXL" data-i18n="sizeXL">Taille XL</label>
+            <div class="qty-controls">
+                <button type="button" class="qty-decrease" data-target="qtyXL">‑</button>
+                <input type="number" id="qtyXL" min="0" max="99" value="0" inputmode="numeric">
+                <button type="button" class="qty-increase" data-target="qtyXL">+</button>
+            </div>
+        </div>
+                            </div>
+                            <p class="size-summary" id="sizeSummary">0 T-shirt sélectionné</p>
+                            <div class="invalid-feedback" data-i18n="errorSizes">Choisissez au moins 1 T-shirt.</div>
+                        </div>
+
+                        <div class="order-summary" id="orderSummary">
+                            <h4 class="order-summary-title" data-i18n="orderSummary">Récapitulatif</h4>
+                            <div class="order-summary-row">
+                                <span><span data-i18n="summaryShirts">T-shirts</span> (<span id="summaryShirtCount">0</span>)</span>
+                                <span id="summaryShirtPrice">0 DA</span>
+                            </div>
+                            <div class="order-summary-row">
+                                <span data-i18n="summaryDelivery">Livraison</span>
+                                <span id="summaryDeliveryPrice">0 DA</span>
+                            </div>
+                            <div class="order-summary-row order-summary-total">
+                                <span data-i18n="summaryTotal">Total à payer</span>
+                                <span id="summaryTotalPrice">0 DA</span>
+                            </div>
+                        </div>
+
+                        <!-- Submit button inside form -->
+                        <div style="text-align: center; margin-top: 20px;">
+                            <button type="submit" class="submit-btn" style="width: 100%; height: 56px; justify-content: center;">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span data-i18n="confirmOrder">Confirmer ma Commande</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STICKY BOTTOM BAR -->
+    <div class="sticky-bottom-bar" id="stickyBar">
+        <div class="sticky-bar-content">
+            <!-- Left: Product metadata thumbnail SVG -->
+            <div class="sticky-product-info">
+                <div class="sticky-product-thumb">
+                    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M110,60 L140,40 L160,50 L240,50 L260,40 L290,60 L320,120 L275,140 L265,115 L265,370 L135,370 L135,115 L125,140 L80,120 Z" fill="#e11d48"/>
+                        <rect x="150" y="50" width="35" height="320" fill="#10b981"/>
+                        <rect x="220" y="50" width="35" height="320" fill="#10b981"/>
+                        <path d="M160,50 Q200,85 240,50 Z" fill="#f59e0b"/>
+                    </svg>
+                </div>
+                <div class="sticky-product-meta">
+                    <h4 data-i18n="stickyProduct">T-Shirt MCA 2026</h4>
+                    <p id="stickyBarPrice"><span data-i18n="priceTag">3 000 DA</span> <span style="text-decoration: line-through; font-size: 11px; opacity: 0.6; color: var(--text-muted); font-weight: normal;" data-i18n="priceOld">4 500 DA</span></p>
+                </div>
+            </div>
+
+            <!-- Center: Quick order inputs (Visible on large screens only) -->
+            <form class="sticky-quick-form" id="stickyCheckoutForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="9ac1185d-6c3f-4c7e-81eb-ff5108d95b21">
+                <input type="hidden" name="subject" value="Nouvelle Commande MCA Store (Sticky)">
+                <div class="sticky-input-group" id="sticky-group-fullname">
+                    <input type="text" id="stickyFullname" data-i18n-placeholder="stickyName" placeholder="Nom Complet" required>
+                    <div class="invalid-feedback" data-i18n="stickyErrorName">Nom requis</div>
+                </div>
+                <div class="sticky-input-group" id="sticky-group-phone">
+                    <input type="tel" id="stickyPhone" data-i18n-placeholder="stickyPhone" placeholder="Téléphone" required>
+                    <div class="invalid-feedback" data-i18n="stickyErrorPhone">N° requis</div>
+                </div>
+                <div class="sticky-input-group" id="sticky-group-wilaya">
+                    <select id="stickyWilayaSelect" required>
+                        <option value="" disabled selected data-i18n="stickyWilaya">Wilaya</option>
+                        <!-- Loaded dynamically -->
+                    </select>
+                    <div class="invalid-feedback" data-i18n="stickyErrorWilaya">Wilaya requise</div>
+                </div>
+                <div class="sticky-input-group" id="sticky-group-commune">
+                    <select id="stickyCommuneSelect" required disabled>
+                        <option value="" disabled selected data-i18n="stickyCommune">Commune</option>
+                        <!-- Loaded dynamically -->
+                    </select>
+                    <div class="invalid-feedback" data-i18n="stickyErrorCommune">Commune requise</div>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="stickySubmitBtn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span data-i18n="buy">Acheter</span>
+                </button>
+            </form>
+
+            <!-- Right: Simple CTA button for Mobile/Tablet which scroll down to checkout form -->
+            <a href="#checkout" class="sticky-order-trigger-btn">
+                <i class="fa-solid fa-cash-register"></i>
+                <span data-i18n="buy">Acheter</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- SUCCESS MODAL BACKDROP -->
+    <div class="modal-backdrop" id="successModalBackdrop">
+        <div class="success-modal">
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h4 class="success-title" data-i18n="successTitle">Commande Reçue !</h4>
+            <p class="success-message" id="successMessage">
+                <span data-i18n="successMsgBefore">Merci</span> <strong id="buyerName">Mohamed</strong><span data-i18n="successMsgAfter">. Votre commande a été enregistrée avec succès.</span> <br>
+                <span data-i18n="successMsgContact">Notre équipe logistique vous contactera par téléphone au</span> <strong id="buyerPhone">0555 12 34 56</strong> <span data-i18n="successMsgDelivery">dans les plus brefs délais pour valider la livraison à</span> <strong><span id="buyerCommune">Bab El Oued</span>, <span id="buyerWilaya">Alger</span></strong>.
+            </p>
+            <div class="success-order-details" id="successOrderDetails"></div>
+            <button class="close-modal-btn" id="closeModalBtn" data-i18n="closeModal">Fermer</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="IMG/LOGO.webp" alt="MCA Logo" class="site-logo" style="transform: none; border-radius: 4px; font-size: 14px; width: auto; height: auto; padding: 6px 12px; font-weight: 800;" loading="lazy">
+            </div>
+            <p class="footer-text" data-i18n="footerText">Mouloudia Club d'Alger - Boutique Non-Officielle de Démonstration Premium. Vive le Mouloudia !</p>
+            <div class="copyright" data-i18n="copyright">
+                © 2026 MCA Store. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load the Wilayas/Communes dataset -->
+    <script src="algeria_wilayas_communes.js"></script>
+    <script src="delivery_rates.js"></script>
+    <script src="i18n.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

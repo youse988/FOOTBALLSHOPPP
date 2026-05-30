@@ -1,0 +1,70 @@
+// Tarifs NOEST - Offre E-commerce départ Alger (HT)
+const DELIVERY_RATES = {
+    "16": { home: 500, stopDesk: 300 },
+    "35": { home: 600, stopDesk: 400 },
+    "09": { home: 600, stopDesk: 400 },
+    "42": { home: 600, stopDesk: 400 },
+    "15": { home: 700, stopDesk: 450 },
+    "10": { home: 700, stopDesk: 450 },
+    "26": { home: 700, stopDesk: 450 },
+    "06": { home: 800, stopDesk: 500 },
+    "34": { home: 800, stopDesk: 500 },
+    "44": { home: 800, stopDesk: 500 },
+    "46": { home: 800, stopDesk: 500 },
+    "23": { home: 800, stopDesk: 500 },
+    "05": { home: 800, stopDesk: 500 },
+    "02": { home: 800, stopDesk: 500 },
+    "25": { home: 800, stopDesk: 500 },
+    "29": { home: 800, stopDesk: 500 },
+    "43": { home: 800, stopDesk: 500 },
+    "27": { home: 800, stopDesk: 500 },
+    "28": { home: 800, stopDesk: 500 },
+    "31": { home: 800, stopDesk: 500 },
+    "04": { home: 800, stopDesk: 500 },
+    "48": { home: 800, stopDesk: 500 },
+    "38": { home: 800, stopDesk: 500 },
+    "13": { home: 800, stopDesk: 500 },
+    "19": { home: 800, stopDesk: 500 },
+    "22": { home: 800, stopDesk: 500 },
+    "21": { home: 800, stopDesk: 500 },
+    "18": { home: 800, stopDesk: 500 },
+    "36": { home: 900, stopDesk: 600 },
+    "24": { home: 900, stopDesk: 600 },
+    "40": { home: 900, stopDesk: 600 },
+    "20": { home: 900, stopDesk: 600 },
+    "41": { home: 900, stopDesk: 600 },
+    "12": { home: 900, stopDesk: 600 },
+    "14": { home: 900, stopDesk: 600 },
+    "51": { home: 1000, stopDesk: 600 },
+    "17": { home: 1000, stopDesk: 600 },
+    "03": { home: 1000, stopDesk: 600 },
+    "07": { home: 1000, stopDesk: 600 },
+    "47": { home: 1100, stopDesk: 700 },
+    "39": { home: 1100, stopDesk: 700 },
+    "57": { home: 1100, stopDesk: null },
+    "30": { home: 1100, stopDesk: 700 },
+    "55": { home: 1100, stopDesk: 700 },
+    "58": { home: 1100, stopDesk: 800 },
+    "32": { home: 1200, stopDesk: 800 },
+    "45": { home: 1200, stopDesk: 800 },
+    "08": { home: 1200, stopDesk: 800 },
+    "52": { home: 1200, stopDesk: 800 },
+    "01": { home: 1500, stopDesk: 1000 },
+    "49": { home: 1500, stopDesk: 1000 },
+    "37": { home: 1700, stopDesk: 1000 },
+    "53": { home: 1800, stopDesk: 1200 },
+    "33": { home: 1900, stopDesk: 1500 },
+    "11": { home: 2000, stopDesk: 1500 },
+    "50": { home: 2000, stopDesk: 1500 },
+    "54": { home: 2000, stopDesk: 1500 },
+    "56": { home: 1900, stopDesk: 1500 }
+};
+
+const TSHIRT_UNIT_PRICE = 3000;
+const TSHIRT_DISCOUNT_PER_UNIT = 100; // −100 DA par T-shirt si quantité > 1
+
+function getTshirtBundlePrice(count) {
+    if (count < 1) return 0;
+    if (count === 1) return TSHIRT_UNIT_PRICE;
+    return count * TSHIRT_UNIT_PRICE - count * TSHIRT_DISCOUNT_PER_UNIT;
+}
