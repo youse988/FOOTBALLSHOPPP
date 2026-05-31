@@ -539,6 +539,10 @@ header {
     transform: rotateY(180deg);
 }
 
+.flip-card-container.flipped .flip-card-back {
+    transform: rotateY(180deg);
+}
+
 /* Custom SVG T-Shirt Styling */
 .jersey-svg {
     width: 95%;
@@ -574,7 +578,11 @@ header {
     touch-action: manipulation;
 }
 
-.flip-card-container:hover .product-front-img,
+/* Counter-rotate back image to prevent text mirroring */
+.flip-card-container:hover .product-front-img {
+    transform: scale(1.05);
+}
+
 .flip-card-container:hover .product-back-img {
     transform: scale(1.05);
 }
