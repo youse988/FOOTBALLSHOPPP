@@ -466,6 +466,8 @@ document.querySelectorAll('.qty-increase').forEach(btn => {
     const productBackImg = document.querySelector('.product-back-img');
     const productDtfImg = document.querySelector('.product-dtf-img');
     const toggleDtfBtn = document.getElementById('toggleDtfBtn');
+    const frontBadge = document.getElementById('frontBadge');
+    const backBadge = document.getElementById('backBadge');
 
     // Mobile tap-to-zoom functionality for product images
     function setupMobileZoom(imgElement) {
@@ -510,8 +512,12 @@ document.querySelectorAll('.qty-increase').forEach(btn => {
             toggleFrontBtn.classList.add('active');
             toggleBackBtn.classList.remove('active');
             toggleDtfBtn.classList.remove('active');
-            // Hide DTF image if visible
+            // Hide DTF image and ensure back image is visible
             if (productDtfImg) productDtfImg.style.display = 'none';
+            productBackImg.style.display = 'block';
+            // Show front badge, hide back badge
+            if (frontBadge) frontBadge.style.display = 'flex';
+            if (backBadge) backBadge.style.display = 'none';
         }
 
         function showBack() {
@@ -522,16 +528,19 @@ document.querySelectorAll('.qty-increase').forEach(btn => {
             // Ensure back image is visible, hide DTF image
             productBackImg.style.display = 'block';
             if (productDtfImg) productDtfImg.style.display = 'none';
+            // Hide front badge, show back badge
+            if (frontBadge) frontBadge.style.display = 'none';
+            if (backBadge) backBadge.style.display = 'flex';
         }
 
-    // Toggle by clicking the card itself
-    shirtCard.addEventListener('click', () => {
-        if (shirtCard.classList.contains('flipped')) {
-            showFront();
-        } else {
-            showBack();
-        }
-    });
+    // Toggle by clicking the card itself - DISABLED to prevent accidental flips on mobile
+    // shirtCard.addEventListener('click', () => {
+    //     if (shirtCard.classList.contains('flipped')) {
+    //         showFront();
+    //     } else {
+    //         showBack();
+    //     }
+    // });
 
     // Toggle by clicking control buttons
     toggleFrontBtn.addEventListener('click', (e) => {
@@ -556,6 +565,9 @@ document.querySelectorAll('.qty-increase').forEach(btn => {
         // Show DTF image, hide back image
         productBackImg.style.display = 'none';
         productDtfImg.style.display = 'block';
+        // Hide front badge, show back badge
+        if (frontBadge) frontBadge.style.display = 'none';
+        if (backBadge) backBadge.style.display = 'flex';
     }
 
     toggleDtfBtn.addEventListener('click', (e) => {
@@ -659,6 +671,26 @@ document.querySelectorAll('.qty-increase').forEach(btn => {
     // Handle order placement and success modal popup
     async function handleOrderSubmit(e, formType) {
         e.preventDefault();
+
+        // Track InitiateCheckout event with Meta Pixel
+        if (typeof fbq !== 'undefined') {
+            const totalQty = getTotalShirtQty();
+            const wilayaCode = getSelectedWilayaCode();
+            const method = getSelectedDeliveryMethod();
+            const shirtPrice = getShirtBundlePrice(totalQty);
+            const deliveryFee = getDeliveryFee(wilayaCode, method);
+            const total = shirtPrice + deliveryFee;
+
+            fbq('track', 'InitiateCheckout', {
+                content_name: 'T-Shirt MCA 2026',
+                content_category: 'Apparel',
+                content_ids: ['MCA-TSHIRT-2026'],
+                content_type: 'product',
+                value: total,
+                currency: 'DZD',
+                num_items: totalQty
+            });
+        }
         
         let nameVal, phoneVal, wilayaCode, communeVal, form;
 
@@ -722,6 +754,19 @@ document.querySelectorAll('.qty-increase').forEach(btn => {
                 const result = await response.json();
 
                 if (result.success) {
+                    // Track purchase event with Meta Pixel
+                    if (typeof fbq !== 'undefined') {
+                        fbq('track', 'Purchase', {
+                            content_name: 'T-Shirt MCA 2026',
+                            content_category: 'Apparel',
+                            content_ids: ['MCA-TSHIRT-2026'],
+                            content_type: 'product',
+                            value: total,
+                            currency: 'DZD',
+                            num_items: totalQty
+                        });
+                    }
+
                     buyerName.textContent = nameVal;
                     buyerPhone.textContent = phoneVal;
                     buyerWilaya.textContent = wilayaName;
