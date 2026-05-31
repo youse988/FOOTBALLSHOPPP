@@ -543,6 +543,11 @@ header {
     transform: rotateY(180deg);
 }
 
+/* Ensure back image is hidden when not flipped on mobile */
+.flip-card-container:not(.flipped) .flip-card-back {
+    visibility: hidden;
+}
+
 /* Custom SVG T-Shirt Styling */
 .jersey-svg {
     width: 95%;
@@ -578,6 +583,12 @@ header {
     touch-action: manipulation;
 }
 
+/* Counter-rotate back images to prevent text mirroring when flipped */
+.flip-card-back .product-back-img,
+.flip-card-back .product-dtf-img {
+    transform: scaleX(1);
+}
+
 /* Counter-rotate back image to prevent text mirroring */
 .flip-card-container:hover .product-front-img {
     transform: scale(1.05);
@@ -608,6 +619,14 @@ header {
     gap: 8px;
     text-transform: uppercase;
     z-index: 10;
+}
+
+/* Position badges outside the 3D flip */
+.front-badge, .back-badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 20;
 }
 
 .flip-badge i {
@@ -1754,11 +1773,9 @@ footer {
 
 /* --- MOBILE PERFORMANCE OPTIMIZATIONS --- */
 @media (max-width: 768px) {
-    /* Reduce or disable backdrop-filter blur effects on mobile for better performance */
+    /* Reduce backdrop-filter blur effects on mobile for better performance */
     header,
     .checkout-card,
-    .flip-card-front,
-    .flip-card-back,
     .carousel-btn,
     .sticky-bottom-bar,
     .modal-backdrop,
@@ -1786,34 +1803,13 @@ footer {
         transition-duration: 0.2s !important;
     }
 
-    /* Disable 3D transforms on mobile */
+    /* Keep flip card working on mobile with simplified animation */
     .flip-card-inner {
-        transform: none !important;
-        transition: none !important;
+        transition: transform 0.4s ease;
     }
 
     .flip-card-container.flipped .flip-card-inner {
-        transform: none !important;
-    }
-
-    /* Show/hide images instead of flip animation */
-    .flip-card-front,
-    .flip-card-back {
-        position: relative;
-        backface-visibility: visible;
-        -webkit-backface-visibility: visible;
-    }
-
-    .flip-card-back {
-        display: none;
-    }
-
-    .flip-card-container.flipped .flip-card-front {
-        display: none;
-    }
-
-    .flip-card-container.flipped .flip-card-back {
-        display: flex;
+        transform: rotateY(180deg);
     }
 
     /* Optimize carousel for mobile */
