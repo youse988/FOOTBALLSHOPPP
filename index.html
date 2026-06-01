@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -13,11 +13,11 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1540750097408936');
+    fbq('init', '2484216808687347');
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1540750097408936&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=2484216808687347&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
     <title>Boutique MCA - Nouveau T-Shirt Officiel 2026</title>
@@ -101,16 +101,17 @@
                         <div class="flip-card-inner">
                             <!-- Front Side -->
                             <div class="flip-card-front">
-                                <span class="flip-badge"><i class="fa-solid fa-arrows-rotate"></i> <span data-i18n="flipFront">Face Avant</span></span>
                                 <img class="product-front-img" src="IMG/MCA AVANT.jpeg" alt="MCA Avant" data-i18n-alt="frontAlt1" loading="lazy">
                             </div>
                             <!-- Back Side -->
                             <div class="flip-card-back">
-                                <span class="flip-badge"><i class="fa-solid fa-arrows-rotate"></i> <span data-i18n="flipBack">Face Arrière</span></span>
                                 <img class="product-back-img" src="IMG/MCA DOS.jpeg" alt="MCA Dos" data-i18n-alt="backAlt1" loading="lazy">
                                 <img class="product-dtf-img" src="IMG/MCA DOS DTF.jpeg" alt="MCA Dos DTF" data-i18n-alt="dtfAlt1" style="display:none;" loading="lazy">
                             </div>
                         </div>
+                        <!-- Badges outside the 3D flip to avoid rotation issues -->
+                        <span class="flip-badge front-badge" id="frontBadge"><i class="fa-solid fa-arrows-rotate"></i> <span data-i18n="flipFront">Face Avant</span></span>
+                        <span class="flip-badge back-badge" id="backBadge" style="display:none;"><i class="fa-solid fa-arrows-rotate"></i> <span data-i18n="flipBack">Face Arrière</span></span>
                     </div>
 
 
@@ -234,6 +235,28 @@
                             <div class="invalid-feedback" data-i18n="errorDelivery">Veuillez choisir un mode de livraison.</div>
                         </div>
 
+                        <div class="form-group" id="group-dtf">
+                            <label data-i18n="labelDtf">Option DTF (Mouloud)</label>
+                            <div class="delivery-options">
+                                <label class="delivery-option">
+                                    <input type="radio" name="dtf_option" value="with_dtf" checked>
+                                    <span class="delivery-option-box">
+                                        <i class="fa-solid fa-star"></i>
+                                        <span class="delivery-option-title" data-i18n="dtfWith">Avec DTF (Mouloud)</span>
+                                        <span class="delivery-option-price">Premium</span>
+                                    </span>
+                                </label>
+                                <label class="delivery-option">
+                                    <input type="radio" name="dtf_option" value="without_dtf">
+                                    <span class="delivery-option-box">
+                                        <i class="fa-solid fa-shirt"></i>
+                                        <span class="delivery-option-title" data-i18n="dtfWithout">Sans DTF</span>
+                                        <span class="delivery-option-price">Standard</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
                         <div class="form-group" id="group-sizes">
                             <label data-i18n="labelSizes">Quantité par taille</label>
                             <div class="size-qty-grid">
@@ -349,7 +372,13 @@
                     </select>
                     <div class="invalid-feedback" data-i18n="stickyErrorCommune">Commune requise</div>
                 </div>
-                
+                <div class="sticky-input-group" id="sticky-group-dtf">
+                    <select id="stickyDtfSelect" required>
+                        <option value="with_dtf" selected data-i18n="dtfWith">Avec DTF (Mouloud)</option>
+                        <option value="without_dtf" data-i18n="dtfWithout">Sans DTF</option>
+                    </select>
+                </div>
+
                 <button type="submit" class="submit-btn" id="stickySubmitBtn">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span data-i18n="buy">Acheter</span>

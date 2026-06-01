@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const stickyPhone = document.getElementById('stickyPhone');
     const stickyWilayaSelect = document.getElementById('stickyWilayaSelect');
     const stickyCommuneSelect = document.getElementById('stickyCommuneSelect');
+    const stickyDtfSelect = document.getElementById('stickyDtfSelect');
+    const mainDtfInputs = document.querySelectorAll('input[name="dtf_option"]');
 
     function getWilayaLabel(w) {
         return getLang() === 'ar'
@@ -330,6 +332,28 @@ document.querySelectorAll('.qty-increase').forEach(btn => {
         syncInputs(stickyPhone, mainPhone);
         clearValidation(document.getElementById('group-phone'));
         clearValidation(document.getElementById('sticky-group-phone'));
+    });
+
+    // Sync DTF selection between main form and sticky form
+    function getSelectedDtfOption() {
+        const selected = document.querySelector('input[name="dtf_option"]:checked');
+        return selected ? selected.value : 'with_dtf';
+    }
+
+    function setMainDtfOption(value) {
+        mainDtfInputs.forEach(input => {
+            input.checked = input.value === value;
+        });
+    }
+
+    mainDtfInputs.forEach(input => {
+        input.addEventListener('change', () => {
+            stickyDtfSelect.value = input.value;
+        });
+    });
+
+    stickyDtfSelect.addEventListener('change', () => {
+        setMainDtfOption(stickyDtfSelect.value);
     });
 
 
@@ -733,12 +757,16 @@ document.querySelectorAll('.qty-increase').forEach(btn => {
                 ? t('deliveryStopDeskShort')
                 : t('deliveryHomeShort');
 
+            const dtfOption = getSelectedDtfOption();
+            const dtfLabel = dtfOption === 'with_dtf' ? t('dtfWith') : t('dtfWithout');
+
             // Set form data for Web3Forms
             formData.set('fullname', nameVal);
             formData.set('phone', phoneVal);
             formData.set('wilaya', wilayaName);
             formData.set('commune', communeVal);
             formData.set('delivery_method', deliveryLabel);
+            formData.set('dtf_option', dtfLabel);
             
             const sizeLines = breakdown.map(s => `${s.qty}x ${s.label}`).join(', ');
             formData.append('quantite_tailles', sizeLines);
@@ -781,6 +809,7 @@ document.querySelectorAll('.qty-increase').forEach(btn => {
                         .join(', ');
                     successOrderDetails.innerHTML = `
                         <p><strong>${t('successSizes')} :</strong> ${sizeLinesLocalized}</p>
+                        <p><strong>Option DTF :</strong> ${dtfLabel}</p>
                         <p><strong>${t('successDelivery')} :</strong> ${deliveryLabel} — ${formatPrice(deliveryFee)}</p>
                         <p><strong>${t('successTotal')} :</strong> ${formatPrice(total)}</p>
                     `;
